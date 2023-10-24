@@ -330,6 +330,9 @@ div.tocify {
   <a href="projects.html">Projects</a>
 </li>
 <li>
+  <a href="plotly.html">Plotly</a>
+</li>
+<li>
   <a href="mailto:&lt;you@youremail.com&gt;">
     <span class="fa fa-envelope fa-lg"></span>
      
@@ -358,18 +361,9 @@ div.tocify {
 <div id="here-is-a-nice-project" class="section level1">
 <h1>Here is a nice project:</h1>
 <p>You can also still use R!</p>
-<pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching core tidyverse packages ────────────
-## ✔ dplyr     1.1.3     ✔ readr     2.1.4
-## ✔ forcats   1.0.0     ✔ stringr   1.5.0
-## ✔ ggplot2   3.4.3     ✔ tibble    3.2.1
-## ✔ lubridate 1.9.3     ✔ tidyr     1.3.0
-## ✔ purrr     1.0.2     
-## ── Conflicts ─────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-<pre class="r"><code>plot_df = 
+<pre class="r"><code>library(tidyverse)
+
+plot_df = 
   tibble(
     x = runif(100),
     y = 1 + 2 * x + rnorm(100)
