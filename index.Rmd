@@ -25,3 +25,4 @@ This is my cat Ted. He is a good cat.
 If you'd like to learn more about this website, visit [this page](about.html).
 
 
+NOW I CAN PUT STUFF ON THE INTERNET
