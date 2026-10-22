@@ -1,0 +1,34 @@
+---
+title: "My awesome website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# This is Jeff's awesome website
+
+![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+
+You can write content. this can be whatever you want to say to the whole world!!
+
+I learned all my data science from [P8105](https://p8105.com)!
+
+To learn about this page, go [here](about.html)
+
+
+
+# Some other stuff that's really cool
+
+Here's a really cool picture that I took:
+
+<img src="images/ted.jpg" style="width:75%">
+
+
+
+Another cool thing is scatterplots. Check this [out](plots.html).
+
+
+
+
+

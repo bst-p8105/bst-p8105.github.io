@@ -1,0 +1,16 @@
+---
+title: "About"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# About this page
+
+This page is about how easy it is to make websites.
+
+It was written by Jeff Goldsmith. 
+
+To go home, click [here](index.html).
+
