@@ -29,6 +29,6 @@ Here's a really cool picture that I took:
 Another cool thing is scatterplots. Check this [out](plots.html).
 
 
-
+10/28: Note that Gustavo can edit this, too!
 
 
