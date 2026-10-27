@@ -1,0 +1,83 @@
+---
+title: "Plotly"
+author: "Gustavo Garcia-Franceschini"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Data and libraries
+
+Loading libraries
+
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+
+library(plotly)
+```
+
+Loading data
+
+```{r}
+data(nyc_airbnb)
+
+nyc_airbnb = nyc_airbnb %>%
+  mutate(rating = review_scores_location/2) %>%
+  select(neighbourhood_group, neighbourhood, rating, price,
+         room_type, lat, long) %>%
+  filter(
+    !is.na(rating),
+    neighbourhood_group == "Manhattan",
+    room_type == "Entire home/apt",
+    price %in% 100:500)
+```
+
+# Plotly 
+
+## Scatterplot
+
+```{r}
+nyc_airbnb %>%
+  mutate(
+    text_label = str_c("Price: $", price, "\nRating: ", rating)) %>%
+  plot_ly(
+    x = ~lat, y = ~long, type = "scatter", mode = "markers", 
+    color = ~price, text = ~text_label, alpha = 0.5
+  )
+```
+
+## Boxplots
+
+```{r}
+ nyc_airbnb %>%
+  mutate(neighbourhood = fct_reorder(neighbourhood, price)) %>%
+  plot_ly(y = ~price, color = ~neighbourhood, 
+          type = "box", colors = "viridis")
+```
+
+## Barchart
+
+
+```{r}
+nyc_airbnb %>%
+  count(neighbourhood) %>%
+  mutate(neighbourhood = fct_reorder(neighbourhood, n)) %>%
+  plot_ly(x = ~neighbourhood, y = ~n, type = "bar", color = ~neighbourhood, 
+          colors = "viridis")
+```
+
+## ggplotly
+
+```{r}
+scatter = nyc_airbnb %>%
+  ggplot(aes(x = lat, y = long, color = price)) +
+  geom_point(alpha = 0.5) +
+  coord_cartesian()
+
+ggplotly(scatter)
+```
+
